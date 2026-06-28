@@ -1,0 +1,31 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# AI Assistant Backend — project tooling configuration
+# ─────────────────────────────────────────────────────────────────────────────
+
+[tool.pytest.ini_options]
+# Discover tests only in the tests/ directory.
+testpaths = ["tests"]
+# Make Python-style asserts produce better diffs.
+addopts = "-v --tb=short"
+# Suppress the requests urllib3 version warning in test output.
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning",
+]
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["tests/*", "**/__init__.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 70
+
+[tool.mypy]
+python_version = "3.12"
+strict = false
+ignore_missing_imports = true
+disallow_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true

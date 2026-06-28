@@ -1,0 +1,16 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# AI Assistant Backend — development & test dependencies
+#
+# Install alongside runtime deps:
+#   pip install -r requirements.txt -r requirements-dev.txt
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Test runner
+pytest==8.3.4
+
+# Async test support (needed for FastAPI's TestClient internally)
+anyio==4.7.0
+httpx==0.28.1          # async HTTP client; also used by FastAPI's TestClient internally
+
+# Coverage
+pytest-cov==6.0.0

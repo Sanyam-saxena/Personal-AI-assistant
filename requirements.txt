@@ -1,0 +1,23 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# AI Assistant Backend — runtime dependencies
+#
+# Install:
+#   pip install -r requirements.txt
+#
+# For development + test dependencies, also install:
+#   pip install -r requirements-dev.txt
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Web framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+
+# HTTP client (used by OllamaService to talk to Ollama)
+requests>=2.31.0
+
+# Settings management (.env file loading)
+pydantic>=2.9.0
+pydantic-settings>=2.6.0
+
+# ASGI server dependency (already pulled by uvicorn[standard])
+# starlette is pinned implicitly via fastapi
