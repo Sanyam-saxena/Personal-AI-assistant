@@ -9,7 +9,7 @@ from components.message_renderer import render_message
 
 def render_chat(messages: list[dict[str, str]]) -> None:
     """
-    Renders the chat history stream by iterating and delegating message display to render_message.
+    Renders the chat history stream by iterating and passing message indices to render_message.
     """
-    for msg in messages:
-        render_message(msg)
+    for idx, msg in enumerate(messages):
+        render_message(msg, idx)
