@@ -8,7 +8,7 @@ import logging
 import os
 
 import requests
-from urllib3.util import Retry
+from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
 
 logger = logging.getLogger(__name__)
@@ -120,7 +120,7 @@ class APIClient:
         adapter = HTTPAdapter(
             pool_connections=2,
             pool_maxsize=10,
-            max_retries=retry_strategy,
+            max_retries=retry_strategy,  # type: ignore[arg-type]
         )
         session.mount("http://", adapter)
         session.mount("https://", adapter)

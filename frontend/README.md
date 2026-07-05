@@ -1,6 +1,6 @@
-# Jarvis AI Assistant Frontend
+# Sam AI Assistant Frontend
 
-A production-quality **Streamlit** frontend interface for the Jarvis AI Assistant, proxying requests to the FastAPI backend.
+A production-quality **Streamlit** frontend interface for the Sam AI Assistant, proxying requests to the backend.
 
 ---
 
@@ -19,9 +19,20 @@ A production-quality **Streamlit** frontend interface for the Jarvis AI Assistan
 ```
 frontend/
 ├── app.py                # Main app entrypoint, layout, and event orchestration
+├── assets/
+│   └── README.md         # Documentation for reserved static branding assets
+├── config/
+│   ├── constants.py      # User-facing string configurations
+│   └── theme.py          # Reusable UI colors and design tokens configuration
 ├── components/
+│   ├── __init__.py       # Component imports and architectural placeholders
 │   ├── custom_css.py     # HTML/CSS injection styles
-│   └── sidebar.py        # Sidebar widgets (health checks, stats, actions)
+│   ├── sidebar.py        # Sidebar widgets (health checks, stats, actions)
+│   ├── header.py         # App header brand layout and theme toggling
+│   ├── message_renderer.py # Chat message renderer
+│   ├── chat_window.py    # Conversation history display stream
+│   ├── input_box.py      # Chat query input box
+│   └── status.py         # Backend connection warning alert UI
 ├── services/
 │   └── api_client.py     # Type-hinted API Client communicating with FastAPI
 ├── utils/
